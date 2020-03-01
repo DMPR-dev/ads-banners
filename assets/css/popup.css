@@ -1,0 +1,64 @@
+div.ads-banners-popup-container
+{
+	position: fixed; 
+	top: 0; 
+	bottom: 0; 
+	left: 0; 
+	right: 0; 
+	display: none;
+	background-color: rgba( 0, 0, 0, 0.5 );
+	z-index: 999999;
+
+	visibility: visible !important;
+}
+
+.ads-banners-popup
+{
+	display: flex;
+	width: 70%;
+	margin: auto;
+	padding: 15px;
+	border-radius: 7px;
+	background-color: white;
+	position: relative;
+}
+
+.ads-banners-popup-close-btn
+{
+	position: absolute;
+	right:15px;
+	top:15px;
+	cursor: pointer;
+}
+
+div.ads-banners-popup-container .wp-block-image,
+div.ads-banners-popup-container .wp-block-cover 
+{
+	margin-bottom: 0px;
+}
+
+div.ads-banners-popup-container .wp-block-image figure 
+{
+	margin: 0px;
+}
+
+div.ads-banners-popup-container .wp-block-image figure figcaption
+{
+	margin-bottom: 0px;
+}
+
+@media screen and (max-width: 1200px)
+{
+	.ads-banners-popup
+	{
+		max-height: 80vh;
+		overflow: scroll;
+	}
+}
+@media screen and (max-width: 768px)
+{
+	.ads-banners-popup
+	{
+		width: 85%;
+	}
+}

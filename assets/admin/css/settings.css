@@ -1,0 +1,46 @@
+.ads-banners-details-holder
+{
+	padding: 15px;
+	background: white;
+}
+.ads-banners-details
+{
+	cursor: pointer;
+}
+.ads-banners-details > summary
+{
+	padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    transition: .3s;
+}
+.ads-banners-details > summary:focus
+{
+	box-shadow: none;
+	outline: 0;
+}
+.ads-banners-details > summary:hover
+{
+	border: 1px solid #00a0d2;
+}
+.ads-banners-details[open] > summary
+{
+	border: 1px solid #00a0d2;
+	border-bottom: 0;
+	margin-bottom: 0px;
+}
+.ads-banners-details[open] > .ads-banners-details-content
+{
+	border-top-color: #00a0d2;
+	margin-bottom: 5px;
+}
+.ads-banners-details-content
+{
+	transition: .3s;
+	border: 1px solid #ddd;
+    padding: 15px;
+}
+.ads-banners-details-content > label
+{
+	margin-bottom: 0px;
+}
