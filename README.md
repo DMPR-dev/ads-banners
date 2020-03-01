@@ -4,17 +4,17 @@ The wordpress plugin that allows you to put banners on your wordpress website. I
 # Theme Integration
 There are a few default locations for ads: 
 <code>
-	//article-sidebar-ads<br/>
-	//article-content-ads<br/>
-	//article-popup-ads<br/>
-	//home-popup-ads<br/>
-	//home-content-ads <br/>
+	article-sidebar-ads,
+	article-content-ads,
+	article-popup-ads,
+	home-popup-ads,
+	home-content-ads,
 </code>
 
-Which means that you only need to call a hook to show the ad in needed location in your theme, i.e 
+Which means that you only need to call a hook to show the ad in needed location in your theme, i.e&nbsp;
 <code>
-  do_action( "article-sidebar-ads" ); // for sidebar ads
-  do_action( "home-popup-ads" ); // for popup / overlay ads on home page
+  do_action( "article-sidebar-ads" ); // for sidebar ads&nbsp; 
+  do_action( "home-popup-ads" ); // for popup / overlay ads on home page&nbsp;
 </code>
 
 Also custom locations are supported, you only need to go to plugin settings which is available by clicking 'Ads Settings' menu item on admin dashboard and speficy custom locations split by comma: location1,location2,location3; After that these custom locations will appear on ad settings sidebar(the one on right side).
