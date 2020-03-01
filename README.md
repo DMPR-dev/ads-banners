@@ -12,6 +12,7 @@ There are a few default locations for ads:
 </code>
 
 Which means that you only need to call a hook to show the ad in needed location in your theme, i.e&nbsp;
+
 <code>
   do_action( "article-sidebar-ads" ), 
   do_action( "home-popup-ads" ), 
