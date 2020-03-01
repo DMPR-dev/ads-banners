@@ -4,11 +4,11 @@ The wordpress plugin that allows you to put banners on your wordpress website. I
 # Theme Integration
 There are a few default locations for ads: 
 <code>
-	//article-sidebar-ads<br>
-	//article-content-ads<br>
-	//article-popup-ads<br>
-	//home-popup-ads<br>
-	//home-content-ads <br>
+	//article-sidebar-ads<br/>
+	//article-content-ads<br/>
+	//article-popup-ads<br/>
+	//home-popup-ads<br/>
+	//home-content-ads <br/>
 </code>
 
 Which means that you only need to call a hook to show the ad in needed location in your theme, i.e 
@@ -21,9 +21,9 @@ Also custom locations are supported, you only need to go to plugin settings whic
 
 Custom locations theme integration:
 Simply use the hooks in the same way as we did with default locations, but use the next hook name:
-<br><code>
+<br/><code>
    "print-custom-ad-" . $location
-</code><br>
+</code><br/>
 
 where location is the name of your location ( whitespaces are forbidden ).
 
