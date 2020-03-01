@@ -13,10 +13,8 @@ There are a few default locations for ads:
 
 Which means that you only need to call a hook to show the ad in needed location in your theme, i.e&nbsp;
 <code>
-	
-  do_action( "article-sidebar-ads" ); // for sidebar ads&nbsp; 
-	
-  do_action( "home-popup-ads" ); // for popup / overlay ads on home page&nbsp;
+  do_action( "article-sidebar-ads" ), 
+  do_action( "home-popup-ads" ), 
 </code>
 
 Also custom locations are supported, you only need to go to plugin settings which is available by clicking 'Ads Settings' menu item on admin dashboard and speficy custom locations split by comma: location1,location2,location3; After that these custom locations will appear on ad settings sidebar(the one on right side).
