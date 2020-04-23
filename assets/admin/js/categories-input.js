@@ -1,8 +1,8 @@
 jQuery( function( $ ) {
-	$( "button.add-category-btn" ).click( function() {
-		var current_categories = JSON.parse( $( this ).parent().find( "input.categories-hidden-input" ).val() );
+	jQuery( "button.add-category-btn" ).click( function() {
+		var current_categories = JSON.parse( jQuery( this ).parent().find( "input.categories-hidden-input" ).val() );
 
-		var selected_category_id = $( this ).parent().find( "select.categories-select" ).val();
+		var selected_category_id = jQuery( this ).parent().find( "select.categories-select" ).val();
 
 		var duplicateCheck = function ( element ) {
 			return element == selected_category_id;
@@ -10,23 +10,23 @@ jQuery( function( $ ) {
 
 		if( current_categories.findIndex( duplicateCheck ) < 0 )
 		{
-			current_categories.push( $( this ).parent().find( "select.categories-select" ).val() );
+			current_categories.push( jQuery( this ).parent().find( "select.categories-select" ).val() );
 
-			$( this ).parent().find( "input.categories-hidden-input" ).val( window.ads_categories.categoriesToString( current_categories ) );
+			jQuery( this ).parent().find( "input.categories-hidden-input" ).val( window.ads_categories.categoriesToString( current_categories ) );
 
 			if( typeof window.ads_categories.categories_names === "undefined" )
 			{
-				window.ads_categories.categories_names = window.ads_categories.grabCategoriesNames( $( this ).parent().parent().parent().find( "select.categories-select" ) );
+				window.ads_categories.categories_names = window.ads_categories.grabCategoriesNames( jQuery( this ).parent().parent().parent().find( "select.categories-select" ) );
 			}
 
 			window.ads_categories.forceCurrentlySelectedCategoriesRefresh( current_categories );
 		}
 	} );
 
-	$( "body" ).on( "click", ".categories-list-object-holder span.remove-btn-holder", function() {
-		var current_categories = JSON.parse( $( this ).parent().parent().parent().find( "input.categories-hidden-input" ).val() );
+	jQuery( "body" ).on( "click", ".categories-list-object-holder span.remove-btn-holder", function() {
+		var current_categories = JSON.parse( jQuery( this ).parent().parent().parent().find( "input.categories-hidden-input" ).val() );
 
-		var selected_category_id = parseInt( $( this ).attr( "data-category-id" ) );
+		var selected_category_id = parseInt( jQuery( this ).attr( "data-category-id" ) );
 
 		var duplicateCheck = function ( element ) {
 			return element == selected_category_id;
@@ -38,11 +38,11 @@ jQuery( function( $ ) {
 		{
 			current_categories.splice( index_of_selected_category, 1 );
 
-			$( this ).parent().parent().parent().find( "input.categories-hidden-input" ).val( window.ads_categories.categoriesToString( current_categories ) );
+			jQuery( this ).parent().parent().parent().find( "input.categories-hidden-input" ).val( window.ads_categories.categoriesToString( current_categories ) );
 
 			if( typeof window.ads_categories.categories_names === "undefined" )
 			{
-				window.ads_categories.categories_names = window.ads_categories.grabCategoriesNames( $( this ).parent().parent().parent().find( "select.categories-select" ) );
+				window.ads_categories.categories_names = window.ads_categories.grabCategoriesNames( jQuery( this ).parent().parent().parent().find( "select.categories-select" ) );
 			}
 
 			window.ads_categories.forceCurrentlySelectedCategoriesRefresh( current_categories );
@@ -97,12 +97,12 @@ window.ads_categories = {
 	grabCategoriesNames : function ( select ) 
 	{
 		var names = {};
-		var options = $( select ).find( 'option' );
+		var options = jQuery( select ).find( 'option' );
 
 		for( var i = 0; i < options.length; i++)
 		{
-			var option = $( options ).eq( i );
-			names[$( option ).attr( "value" )] = $( option ).text();
+			var option = jQuery( options ).eq( i );
+			names[jQuery( option ).attr( "value" )] = jQuery( option ).text();
 		}
 
 		return names;

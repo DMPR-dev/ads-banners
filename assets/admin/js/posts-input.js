@@ -1,8 +1,8 @@
 jQuery( function( $ ) {
-	$( "button.add-post-btn" ).click( function() {
-		var current_posts = JSON.parse( $( this ).parent().find( "input.posts-hidden-input" ).val() );
+	jQuery( "button.add-post-btn" ).click( function() {
+		var current_posts = JSON.parse( jQuery( this ).parent().find( "input.posts-hidden-input" ).val() );
 
-		var selected_post_id = $( this ).parent().find( "input.posts-select" ).val();
+		var selected_post_id = jQuery( this ).parent().find( "input.posts-select" ).val();
 
 		var duplicateCheck = function ( element ) {
 			return element == selected_post_id;
@@ -10,23 +10,23 @@ jQuery( function( $ ) {
 
 		if( current_posts.findIndex( duplicateCheck ) < 0 )
 		{
-			current_posts.push( $( this ).parent().find( "input.posts-select" ).val() );
+			current_posts.push( jQuery( this ).parent().find( "input.posts-select" ).val() );
 
-			$( this ).parent().find( "input.posts-hidden-input" ).val( window.ads_posts.postsToString( current_posts ) );
+			jQuery( this ).parent().find( "input.posts-hidden-input" ).val( window.ads_posts.postsToString( current_posts ) );
 
 			if( typeof window.ads_posts.posts_names === "undefined" )
 			{
-				window.ads_posts.posts_names = window.ads_posts.grabPostsNames( $( this ).parent().parent().parent().find( "input.posts-select" ).next( "datalist" ) );
+				window.ads_posts.posts_names = window.ads_posts.grabPostsNames( jQuery( this ).parent().parent().parent().find( "input.posts-select" ).next( "datalist" ) );
 			}
 
 			window.ads_posts.forceCurrentlySelectedPostsRefresh( current_posts );
 		}
 	} );
 
-	$( "body" ).on( "click", ".posts-list-object-holder span.remove-btn-holder", function() {
-		var current_posts = JSON.parse( $( this ).parent().parent().parent().find( "input.posts-hidden-input" ).val() );
+	jQuery( "body" ).on( "click", ".posts-list-object-holder span.remove-btn-holder", function() {
+		var current_posts = JSON.parse( jQuery( this ).parent().parent().parent().find( "input.posts-hidden-input" ).val() );
 
-		var selected_post_id = parseInt( $( this ).attr( "data-post-id" ) );
+		var selected_post_id = parseInt( jQuery( this ).attr( "data-post-id" ) );
 
 		var duplicateCheck = function ( element ) {
 			return element == selected_post_id;
@@ -38,26 +38,26 @@ jQuery( function( $ ) {
 		{
 			current_posts.splice( index_of_selected_post, 1 );
 
-			$( this ).parent().parent().parent().find( "input.posts-hidden-input" ).val( window.ads_posts.postsToString( current_posts ) );
+			jQuery( this ).parent().parent().parent().find( "input.posts-hidden-input" ).val( window.ads_posts.postsToString( current_posts ) );
 
 			if( typeof window.ads_posts.posts_names === "undefined" )
 			{
-				window.ads_posts.posts_names = window.ads_posts.grabPostsNames( $( this ).parent().parent().parent().find( "input.posts-select" ).next( "datalist" ) );
+				window.ads_posts.posts_names = window.ads_posts.grabPostsNames( jQuery( this ).parent().parent().parent().find( "input.posts-select" ).next( "datalist" ) );
 			}
 
 			window.ads_posts.forceCurrentlySelectedPostsRefresh( current_posts );
 		}
 	} );
 
-	$( "body" ).on( "change", ".posts-select", function() {
+	jQuery( "body" ).on( "change", ".posts-select", function() {
 		if( typeof window.ads_posts.posts_names === "undefined" )
 		{
-			window.ads_posts.posts_names = window.ads_posts.grabPostsNames( $( this ).next( "datalist" ) );
+			window.ads_posts.posts_names = window.ads_posts.grabPostsNames( jQuery( this ).next( "datalist" ) );
 		}
 
-		var selected_post_holder = $( this ).parent().parent().find( "div" ).find( "input.currently-selected-post" );
+		var selected_post_holder = jQuery( this ).parent().parent().find( "div" ).find( "input.currently-selected-post" );
 
-		selected_post_holder.val( window.ads_posts.detectPostName( parseInt( $( this ).val() ) ) );
+		selected_post_holder.val( window.ads_posts.detectPostName( parseInt( jQuery( this ).val() ) ) );
 	} );
 } );
 
@@ -108,12 +108,12 @@ window.ads_posts = {
 	grabPostsNames : function ( select ) 
 	{
 		var names = {};
-		var options = $( select ).find( 'option' );
+		var options = jQuery( select ).find( 'option' );
 
 		for( var i = 0; i < options.length; i++)
 		{
-			var option = $( options ).eq( i );
-			names[$( option ).attr( "value" )] = $( option ).text();
+			var option = jQuery( options ).eq( i );
+			names[jQuery( option ).attr( "value" )] = jQuery( option ).text();
 		}
 
 		return names;

@@ -40,7 +40,7 @@ class Inputs
 		ob_start();
 		?>
 			<label for="<?php echo esc_attr( $name ); ?>"> <?php echo esc_html( $label ); ?> </label>
-			<select style="width: 100%;" id="<?php echo esc_attr( $name ); ?>" name="<?php echo esc_attr( $name ); ?>">
+			<select style="width: calc( 100% - 30px);" id="<?php echo esc_attr( $name ); ?>" name="<?php echo esc_attr( $name ); ?>">
 				<?php
 					foreach( $values as $key => $val )
 					{
@@ -117,7 +117,7 @@ class Inputs
 		?>
 
 		<label for="<?php echo esc_attr( $name ); ?>-select" style="margin-top: 15px;"><?php echo __( "Add Categories" ); ?> </label>
-		<select style="width: 100%;" id="<?php echo esc_attr( $name ); ?>-select" class="categories-select">
+		<select style="width: calc( 100% - 30px);" id="<?php echo esc_attr( $name ); ?>-select" class="categories-select">
 			<?php
 				if( is_array( $categories ) )
 				{
