@@ -39,7 +39,8 @@ div.ads-banners-popup-container .wp-block-cover
 
 div.ads-banners-popup-container .wp-block-image figure 
 {
-	margin: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 div.ads-banners-popup-container .wp-block-image figure figcaption
