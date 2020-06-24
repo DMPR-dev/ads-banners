@@ -281,7 +281,7 @@ class Ad
 
 		ob_start();
 		?>
-			<div class="ads-banners-popup-container" style="visibility: hidden">
+			<div class="ads-banners-popup-container">
 				<div class="ads-banners-popup">
 					<span class="ads-banners-popup-close-btn">
 						x

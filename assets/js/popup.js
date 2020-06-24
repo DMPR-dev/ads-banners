@@ -18,6 +18,9 @@
 			setTimeout( function() {
 				$( 'div.ads-banners-popup-container' ).css( 'opacity', 0 );
 				$( 'div.ads-banners-popup-container' ).css( 'display', 'flex' );
+				$( 'div.ads-banners-popup-container' ).css( 'visibility', 'visible' );
+				$( 'div.ads-banners-popup-container' ).css( 'pointer-events', 'all' );
+				$( 'div.ads-banners-popup-container' ).css( 'z-index', '99999999' );
 				$( 'div.ads-banners-popup-container' ).animate( {opacity : 1 }, 500 );
 			}, 4000 );
 

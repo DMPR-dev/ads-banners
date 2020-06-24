@@ -24,6 +24,7 @@ if( typeof ads_banners === 'undefined' )
 				{
 
 				};
+
 	            jQuery( document ).unbind( 'touchstart', init );
 	            jQuery( window ).unbind( 'scroll', init );
 			};
