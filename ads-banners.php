@@ -18,6 +18,8 @@ require_once plugin_dir_path( __FILE__ ) . 'classes/styles.php';
 
 require_once plugin_dir_path( __FILE__ ) . 'classes/settings.php';
 
+require_once plugin_dir_path( __FILE__ ) . 'classes/actions.php';
+
 require_once plugin_dir_path( __FILE__ ) . 'classes/wp_post/ad.php';
 
 require_once plugin_dir_path( __FILE__ ) . 'blocks/index.php';
@@ -43,6 +45,8 @@ class AdsBanners
 		Styles::register();
 
 		Settings::register();
+
+		Actions::register();
 	}
 }
 

@@ -47,6 +47,20 @@ class MetaBox
 		self::$boxes = array(
 			array(
 				"post_type" => "ads-banners",
+				"id"		=> "ads-banners-unpublish-date",
+				"label"		=> __( "Unpublish date" ),
+				"location"	=> "side",
+				"priority"	=> "high",
+				"fields" 	=> array(
+					array(
+						"name" 		=> "unpublish-date",
+						"label" 	=> __( "Unpublish on date" ) . ":",
+						"type"		=> "date"
+					)
+				)
+			),
+			array(
+				"post_type" => "ads-banners",
 				"id"		=> "ads-banners-location",
 				"label"		=> __( "Location" ),
 				"location"	=> "side",
@@ -179,6 +193,9 @@ class MetaBox
 						break;
 					case 'posts_linked':
 						echo Inputs::PostsListInput( $post_id , $field["name"], $field["label"] );
+						break;
+					case 'date':
+						echo Inputs::DateInput( $post_id , $field["name"], $field["label"] );
 						break;
 
 					default:

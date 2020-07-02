@@ -30,6 +30,31 @@ class Inputs
 	/*
 	 *
 	 *
+	 *	Date INPUT
+	 *
+	 *
+	 */
+	public static function DateInput( $post_id, $name, $label, $get_data = 'get_post_meta' )
+	{
+		$current_value = $get_data( $post_id, $name, true );
+		$today = date( "d-m-Y" );
+		ob_start();
+		?>
+			<label for="<?php echo esc_attr( $name ); ?>"> <?php echo esc_html( $label ); ?> </label>
+			<input type="date" style="width: 100%;" id="<?php echo esc_attr( $name ); ?>" name="<?php echo esc_attr( $name ); ?>" value="<?php echo esc_attr( $current_value ); ?>" min="<?php echo $today; ?>"/>
+		<?php
+		return ob_get_clean();
+	}
+	/*
+	 *
+	 *
+	 *	END: TEXT INPUT
+	 *
+	 *
+	 */
+	/*
+	 *
+	 *
 	 *	SELECT INPUT
 	 *
 	 *
